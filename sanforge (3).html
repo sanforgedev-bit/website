@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>sanforge — Digital Marketing & Web Development</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f6f4ef;--bg2:#ece9e1;--ink:#14171a;--mute:#5b6168;--line:#d9d5ca;--acc:#c2410c;--on:#f6f4ef;--inkbg:#14171a}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111315;--bg2:#181b1e;--ink:#eeebe4;--mute:#9a9fa6;--line:#2a2e33;--acc:#f0763a;--on:#111315;--inkbg:#1d2125}}
+:root[data-theme="dark"]{--bg:#111315;--bg2:#181b1e;--ink:#eeebe4;--mute:#9a9fa6;--line:#2a2e33;--acc:#f0763a;--on:#111315;--inkbg:#1d2125}
+html{scroll-padding-top:80px;scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 Inter,system-ui,sans-serif}
+a{color:inherit;text-decoration:none}
+.w{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:'Plus Jakarta Sans',Inter,system-ui,sans-serif;font-weight:700;letter-spacing:-.035em;line-height:1.08;margin:0}
+h2{font-size:clamp(2rem,4.2vw,3rem);margin-bottom:16px}
+section{padding:96px 0;border-top:1px solid var(--line)}
+.eyebrow{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);font-weight:600;margin-bottom:18px}
+.lead{color:var(--mute);max-width:560px;margin:0 0 48px}
+.btn{display:inline-block;padding:14px 26px;border-radius:4px;font-weight:500;font-size:.95rem;border:1px solid var(--ink);transition:.2s;cursor:pointer;font-family:inherit;background:transparent;color:var(--ink)}
+.btn.p{background:var(--ink);color:var(--on)}
+.btn:hover{background:var(--acc);border-color:var(--acc);color:#fff}
+nav{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .w{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-weight:800;font-family:'Plus Jakarta Sans',Inter,system-ui,sans-serif;font-size:1.6rem}
+.logo i{color:var(--acc);font-style:normal}
+.links{display:flex;gap:28px;align-items:center;font-size:.92rem}
+.links a:not(.btn):hover{color:var(--acc)}
+.links .btn{padding:9px 18px;font-size:.88rem}
+.hero{padding:96px 0 88px;border:0}
+.hero .w{display:grid;grid-template-columns:1.25fr .75fr;gap:64px;align-items:end}
+.hero h1{font-size:clamp(2.8rem,6.6vw,5.2rem);margin-bottom:26px}
+.hero h1 em{color:var(--acc)}
+.hero p{color:var(--mute);font-size:1.1rem;max-width:540px;margin:0 0 34px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.idx{border-top:1px solid var(--ink)}
+.idx div{display:flex;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.idx span{color:var(--mute)}
+.svc{border-top:1px solid var(--ink)}
+.row{display:grid;grid-template-columns:70px 1fr 1.2fr;gap:32px;padding:40px 0;border-bottom:1px solid var(--line);transition:.25s}
+.row:hover{padding-left:14px}
+.row .n{color:var(--acc);font-weight:600;font-size:.9rem;padding-top:8px}
+.row h3{font-size:2rem;margin-bottom:12px}
+.row p{color:var(--mute);margin:0 0 18px}
+.row ul{margin:0 0 20px;padding:0;list-style:none;columns:2;font-size:.92rem}
+.row li{padding:3px 0}
+.row li::before{content:"— ";color:var(--acc)}
+.more{font-weight:500;border-bottom:1px solid var(--acc);padding-bottom:2px}
+.g{display:grid;gap:32px}.g4{grid-template-columns:repeat(4,1fr)}.g2{grid-template-columns:repeat(2,1fr);gap:48px 64px}
+.step{border-top:1px solid var(--ink);padding-top:18px}
+.step b{display:block;color:var(--acc);font-size:.8rem;letter-spacing:.12em;margin-bottom:8px}
+.step h3{font-size:1.6rem;margin-bottom:8px}
+.step p{margin:0;color:var(--mute);font-size:.95rem}
+.ph{border:1px dashed var(--mute);background:var(--bg2)}
+.ph .img{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;color:var(--mute);font-size:.85rem}
+.ph .in{padding:18px;border-top:1px dashed var(--mute)}
+.ph small{color:var(--acc);font-weight:600;letter-spacing:.1em;font-size:.7rem}
+.ph h3{font-size:1.25rem;margin-top:4px}
+.fun{display:grid;grid-template-columns:repeat(6,1fr);border:1px solid var(--line);margin-bottom:32px}
+.fun div{padding:22px 12px;text-align:center;font-size:.8rem;font-weight:600;letter-spacing:.08em;border-right:1px solid var(--line);position:relative}
+.fun div:last-child{border:0}
+.fun div:not(:last-child)::after{content:"›";position:absolute;right:-6px;top:50%;transform:translateY(-50%);background:var(--bg);color:var(--acc);z-index:1;font-size:1.1rem}
+.why h3{font-size:1.7rem;margin-bottom:8px}.why p{margin:0;color:var(--mute)}
+.about{max-width:760px}.about p{color:var(--mute);font-size:1.1rem}
+.band{background:var(--inkbg);color:#f6f4ef;border:0;text-align:center}
+.band h2{max-width:720px;margin:0 auto 16px}.band p{color:#aeb2b8;max-width:520px;margin:0 auto 32px}
+.band .cta{justify-content:center}.band .btn{border-color:#f6f4ef;color:#f6f4ef}.band .btn.p{background:#f6f4ef;color:#14171a}
+.band .btn:hover{background:var(--acc);border-color:var(--acc);color:#fff}
+form{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:760px}.f{grid-column:1/-1}
+input,select,textarea{width:100%;background:transparent;border:0;border-bottom:1px solid var(--ink);color:var(--ink);padding:14px 2px;font:inherit;border-radius:0}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--acc)}
+select option{color:#14171a}
+.note{font-size:.85rem;color:var(--mute);margin-left:10px}
+footer{border-top:1px solid var(--line);padding:44px 0 100px;font-size:.9rem;color:var(--mute)}
+footer .w{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px}
+.fl{display:flex;gap:20px;flex-wrap:wrap}.fl a:hover{color:var(--acc)}
+.sticky{display:none}
+.rv{opacity:0;transform:translateY(18px);transition:.7s ease}.rv.in{opacity:1;transform:none}
+@media(max-width:860px){
+section{padding:64px 0}.hero{padding:56px 0}.links a:not(.btn){display:none}
+.hero .w,.row,.g4,.g2,form{grid-template-columns:1fr}.hero .w{gap:40px}.row{gap:12px}.row ul{columns:1}
+.fun{grid-template-columns:1fr 1fr}.fun div{border-bottom:1px solid var(--line)}.fun div::after{display:none}
+.sticky{display:flex;position:fixed;left:14px;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));gap:10px;z-index:60}
+.sticky a{flex:1;text-align:center;background:var(--bg);box-shadow:0 6px 24px rgba(0,0,0,.25)}.sticky a.p{background:var(--ink)}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+<nav><div class="w">
+<a href="#home" class="logo">san<i>forge</i></a>
+<div class="links"><a href="#home">Home</a><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a><a href="#contact" class="btn p">Let's Work Together</a></div>
+</div></nav>
+
+<header class="hero" id="home"><div class="w">
+<div>
+<div class="eyebrow">Digital Marketing • Web Development • E-commerce</div>
+<h1>Helping businesses <em>build, reach</em> &amp; grow online.</h1>
+<p>I help businesses strengthen their online presence through social media marketing, Meta advertising, high-converting websites and e-commerce solutions.</p>
+<div class="cta"><a href="#contact" class="btn p">Start a Project</a><a href="#services" class="btn">View Services</a></div>
+</div>
+<div class="idx" aria-label="Services">
+<div>Social Media Marketing<span>01</span></div><div>Meta Ads &amp; Lead Generation<span>02</span></div><div>Website Development<span>03</span></div><div>E-commerce Development<span>04</span></div>
+</div>
+</div></header>
+
+<section id="services"><div class="w">
+<div class="eyebrow">Services</div>
+<h2 class="rv">What I can help you with</h2>
+<p class="lead rv">From getting discovered online to turning visitors into customers, I build digital solutions around your business goals.</p>
+<div class="svc">
+<div class="row rv"><div class="n">01</div><div><h3>Social Media Marketing</h3></div><div><p>Build a stronger social presence with consistent content, creative direction and platform-focused marketing.</p><ul><li>Content strategy</li><li>Instagram/Facebook management</li><li>Reels &amp; creative content</li><li>Content planning</li><li>Brand positioning</li><li>Performance tracking</li></ul><a class="more" href="#contact" data-svc="Social Media Marketing">Explore Service</a></div></div>
+<div class="row rv"><div class="n">02</div><div><h3>Meta Ads &amp; Lead Generation</h3></div><div><p>Reach the right audience and generate meaningful enquiries through strategically planned Meta advertising campaigns.</p><ul><li>Campaign setup</li><li>Audience targeting</li><li>Lead generation</li><li>Creative testing</li><li>Lead forms</li><li>Campaign monitoring</li><li>Performance optimization</li></ul><a class="more" href="#contact" data-svc="Meta Ads">Generate Leads</a></div></div>
+<div class="row rv"><div class="n">03</div><div><h3>Website Development</h3></div><div><p>Modern, responsive websites designed to give businesses a professional online presence and turn visitors into enquiries.</p><ul><li>Business websites</li><li>Responsive design</li><li>Landing pages</li><li>React / JavaScript</li><li>Backend integration</li><li>Contact forms</li><li>Performance-focused</li></ul><a class="more" href="#contact" data-svc="Website Development">Build My Website</a></div></div>
+<div class="row rv"><div class="n">04</div><div><h3>E-commerce Development</h3></div><div><p>Create online stores that make it easy for customers to discover products, shop and complete their purchase.</p><ul><li>Product catalogues</li><li>Shopping cart</li><li>Checkout</li><li>Payment integration</li><li>Order management</li><li>Search &amp; filtering</li><li>Responsive design</li></ul><a class="more" href="#contact" data-svc="E-commerce Development">Build My Store</a></div></div>
+</div></div></section>
+
+<section><div class="w">
+<div class="eyebrow">Process</div><h2 class="rv">How I work</h2><div style="height:32px"></div>
+<div class="g g4">
+<div class="step rv"><b>01</b><h3>Discover</h3><p>Understand your business, audience and goals.</p></div>
+<div class="step rv"><b>02</b><h3>Plan</h3><p>Build the right marketing or digital strategy.</p></div>
+<div class="step rv"><b>03</b><h3>Build</h3><p>Create the website, content or campaign.</p></div>
+<div class="step rv"><b>04</b><h3>Optimize</h3><p>Track performance and improve what works.</p></div>
+</div></div></section>
+
+
+<section><div class="w">
+<div class="eyebrow">Lead generation</div><h2 class="rv">From scroll to sales conversation</h2><div style="height:28px"></div>
+<div class="fun rv"><div>AD</div><div>CLICK</div><div>LEAD FORM</div><div>QUALIFIED LEAD</div><div>FOLLOW-UP</div><div>SITE VISIT</div></div>
+<p class="lead rv" style="margin:0">I don't focus only on generating large numbers of leads. The goal is to attract relevant prospects and create a process for turning enquiries into genuine business opportunities.</p>
+</div></section>
+
+<section><div class="w">
+<div class="eyebrow">Why sanforge</div><h2 class="rv">Why work with me</h2><div style="height:32px"></div>
+<div class="g g2 why">
+<div class="rv"><h3>Business + Technology</h3><p>Marketing and development skills combined in one place.</p></div>
+<div class="rv"><h3>Custom Approach</h3><p>Strategies and digital solutions built around your business rather than generic packages.</p></div>
+<div class="rv"><h3>Clear Communication</h3><p>Simple communication, transparent progress and clear deliverables.</p></div>
+<div class="rv"><h3>Performance Mindset</h3><p>Track results, learn from the data and continuously improve.</p></div>
+</div></div></section>
+
+<section id="about"><div class="w about">
+<div class="eyebrow">About</div><h2 class="rv">Building digital solutions with both creativity &amp; code</h2><div style="height:16px"></div>
+<p class="rv">I'm Sangameshwari, a digital professional combining web development and digital marketing to help businesses build a stronger online presence.</p>
+<p class="rv">My work spans social media marketing, Meta advertising, website development and e-commerce development. I enjoy turning business ideas into practical digital experiences that look professional and work toward a clear goal.</p>
+</div></section>
+
+<section class="band"><div class="w">
+<h2>Have a business idea or need more customers?</h2>
+<p>Let's discuss what you're trying to achieve and find the right digital solution for your business.</p>
+<div class="cta"><a href="#contact" class="btn p">Start a Conversation</a><a href="#" class="btn wa">WhatsApp Me</a></div>
+</div></section>
+
+<section id="contact"><div class="w">
+<div class="eyebrow">Contact</div><h2 class="rv">Let's build something</h2><div style="height:24px"></div>
+<form id="f" class="rv">
+<input name="name" placeholder="Name" required><input name="email" type="email" placeholder="Email">
+<input name="phone" type="tel" placeholder="Phone"><input name="biz" placeholder="Business Name">
+<select name="svc" class="f" id="svc"><option value="">Service Required</option><option>Social Media Marketing</option><option>Meta Ads</option><option>Website Development</option><option>E-commerce Development</option></select>
+<textarea name="msg" class="f" rows="4" placeholder="Project Details"></textarea>
+<div class="f" style="margin-top:12px"><button class="btn p" type="submit">Send Enquiry</button><span class="note" id="msgnote"></span></div>
+</form>
+</div></section>
+
+<footer><div class="w">
+<div><div class="logo" style="color:var(--ink)">san<i>forge</i></div><p style="max-width:320px;margin:6px 0 0">Digital marketing, advertising and web solutions for growing businesses.</p></div>
+<div class="fl"><a href="#home">Home</a><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a><a href="#" class="ig">Instagram</a><a href="#" class="wa">WhatsApp</a></div>
+<div style="width:100%">© 2026 sanforge. All rights reserved.</div>
+</div></footer>
+
+<div class="sticky"><a href="#contact" class="btn p">Start a Project</a><a href="#" class="btn wa">WhatsApp</a></div>
+
+<script>
+// Owner: fill in (WhatsApp with country code, digits only)
+var WHATSAPP="", INSTAGRAM="", EMAIL="";
+document.querySelectorAll('.wa').forEach(function(a){if(WHATSAPP){a.href="https://wa.me/"+WHATSAPP;a.target="_blank";a.rel="noopener"}else a.addEventListener('click',function(e){e.preventDefault();location.hash="contact"})});
+document.querySelectorAll('.ig').forEach(function(a){if(INSTAGRAM){a.href=INSTAGRAM;a.target="_blank";a.rel="noopener"}});
+document.querySelectorAll('[data-svc]').forEach(function(a){a.addEventListener('click',function(){document.getElementById('svc').value=a.dataset.svc})});
+document.getElementById('f').addEventListener('submit',function(e){
+e.preventDefault();var d=new FormData(e.target),t="New enquiry from sanforge\nName: "+d.get('name')+"\nEmail: "+d.get('email')+"\nPhone: "+d.get('phone')+"\nBusiness: "+d.get('biz')+"\nService: "+d.get('svc')+"\nDetails: "+d.get('msg');
+var n=document.getElementById('msgnote');
+if(WHATSAPP)window.open("https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(t),"_blank");
+else if(EMAIL)location.href="mailto:"+EMAIL+"?subject=Enquiry&body="+encodeURIComponent(t);
+else n.textContent="Contact details are not set up yet.";
+});
+var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.1});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+</script>
+</body>
+</html>
